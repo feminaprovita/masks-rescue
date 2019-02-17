@@ -1,0 +1,25 @@
+{
+  "name": "masks-rescue",
+  "version": "1.0.0",
+  "description": "creating a permanent record of the contents of the Google Plus group for Masks: A New Generation RPG",
+  "main": "scrape.js",
+  "dependencies": {
+    "googleapis": "^37.2.0",
+    "puppeteer": "^1.12.2",
+    "puppeteer-core": "^1.12.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/feminaprovita/masks-rescue.git"
+  },
+  "author": "Brian Lagoda and Claire Gilligan (and content by Masks community members)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/feminaprovita/masks-rescue/issues"
+  },
+  "homepage": "https://github.com/feminaprovita/masks-rescue#readme"
+}
