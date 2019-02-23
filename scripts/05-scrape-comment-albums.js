@@ -1,4 +1,3 @@
-const fs = require('fs');
 const puppeteer = require('puppeteer');
 
 const scrape = async (url) => {
@@ -46,9 +45,4 @@ const batchCommentScraping = async (arr,num=10) => {
   return arr;
 }
 
-module.exports = (inputJ, outputJ) => {
-  const posts = JSON.parse(fs.readFileSync(inputJ, 'utf8'))
-  batchCommentScraping(posts).then(output => {
-    fs.writeFileSync(outputJ, JSON.stringify(output, undefined, 2));
-  })
-}
+module.exports = batchCommentScraping
