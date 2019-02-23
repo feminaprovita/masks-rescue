@@ -46,15 +46,11 @@ const parseActivity = async (activityId) => {
 const getAllActivities = async (activityList) => {
   let out = []
   for (let i = 0; i < activityList.length; i++){
-    out.push(await parseActivity(activityList[i]))
+    let parsed = await parseActivity(activityList[i])
+    if (i === 0) console.log(JSON.stringify(parsed, undefined, 2)
+    out.push(parsed)
   }
   return out
 }
 
-module.exports = (inputJ, outputJ) => {
-  const activityList = JSON.parse(fs.readFileSync(inputJ, 'utf8'))
-  parseActivity(activityList[0]).then(v => console.log(JSON.stringify(v, undefined, 2)))
-
-  getAllActivities(activityList).then(
-    v => fs.writeFileSync(outputJ, JSON.stringify(v, undefined, 2)));
-}
+module.exports = getAllActivities
