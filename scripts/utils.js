@@ -43,10 +43,21 @@ const ScrapeInfiniteScrollByUrl = async (url, extractItems, maxItems=1000000) =>
   return items;
 }
 
+const scrapePageByUrl = async (url, extractorFx) => {
+  const browser = await puppeteer.launch({headless: true});
+  const page = await browser.newPage();
+  await page.goto(url);
+  const result = await page.evaluate(extractorFx);
+  await browser.close();
+//   console.log('RESULT', result);
+  return result;
+};
+
 
 module.exports = {
   sortPostsByDate,
   readJsonFile,
   writeJsonFile,
-  ScrapeInfiniteScrollByUrl
+  ScrapeInfiniteScrollByUrl, //cap was an accident please fix in vscode
+  scrapePageByUrl
 }
