@@ -1,26 +1,97 @@
-{
-  "category": "Masks: A New Generation RPG (Actual Play)",
-  "published": "2019-02-11T18:46:22.345Z",
-  "updated": "2019-02-11T18:46:22.345Z",
-  "authorId": "106484838480275093774",
-  "authorDisplayName": "Alexi Sargeant",
+[{
+  "category": "Masks: A New Generation RPG (Fan Made Content)",
+  "published": "2018-05-20T02:12:30.019Z",
+  "updated": "2018-05-20T02:14:54.831Z",
+  "authorId": "113672685246787093188",
+  "authorDisplayName": "Blue",
   "comments": [
     {
-      "id": "z134ilpgrx3ys3btn23rzz4ybuztyzwhg04.1550034365458256",
-      "url": "https://www.googleapis.com/plus/v1/comments/z134ilpgrx3ys3btn23rzz4ybuztyzwhg04#1550034365458256",
-      "published": "2019-02-13T05:06:05.458Z",
-      "updated": "2019-02-13T05:06:05.458Z",
-      "authorId": "107608892144761520587",
-      "authorDisplayName": "Michael Mendoza",
-      "content": "I always enjoy super tales that venture into fantasy territory"
+      "id": "z121ujnwyoufxbmts23wh3arluyzunqcg.1526784915194742",
+      "url": "https://www.googleapis.com/plus/v1/comments/z121ujnwyoufxbmts23wh3arluyzunqcg#1526784915194742",
+      "published": "2018-05-20T02:55:15.194Z",
+      "updated": "2018-05-20T02:55:15.194Z",
+      "authorId": "118094058046611495264",
+      "authorDisplayName": "Leah Libresco",
+      "content": "These are really cool! They make me want to know a little synopsis/teaser for each.<br />"
+    },
+    {
+      "id": "z121ujnwyoufxbmts23wh3arluyzunqcg.1526785087558614",
+      "url": "https://www.googleapis.com/plus/v1/comments/z121ujnwyoufxbmts23wh3arluyzunqcg#1526785087558614",
+      "published": "2018-05-20T02:58:07.558Z",
+      "updated": "2018-05-20T02:58:07.558Z",
+      "authorId": "113672685246787093188",
+      "authorDisplayName": "Blue",
+      "content": "+Leah Libresco Thanks! If there was a way to put a caption on the pictures I would!"
+    },
+    {
+      "id": "z121ujnwyoufxbmts23wh3arluyzunqcg.1526798508095425",
+      "url": "https://www.googleapis.com/plus/v1/comments/z121ujnwyoufxbmts23wh3arluyzunqcg#1526798508095425",
+      "published": "2018-05-20T06:41:48.095Z",
+      "updated": "2018-05-20T06:41:48.095Z",
+      "authorId": "105287631039905533306",
+      "authorDisplayName": "Jason Corley",
+      "content": "I LOVE IT"
+    },
+    {
+      "id": "z121ujnwyoufxbmts23wh3arluyzunqcg.1526800305932996",
+      "url": "https://www.googleapis.com/plus/v1/comments/z121ujnwyoufxbmts23wh3arluyzunqcg#1526800305932996",
+      "published": "2018-05-20T07:11:45.932Z",
+      "updated": "2018-05-20T07:11:45.932Z",
+      "authorId": "107391151949970703123",
+      "authorDisplayName": "Michael Williams",
+      "content": "I love all of them. The layouts are imaginative. All the characters have personality and style. You're a great artist.<br /><br />Now I also want to hear about these kids' adventures."
+    },
+    {
+      "id": "z121ujnwyoufxbmts23wh3arluyzunqcg.1526817547566750",
+      "url": "https://www.googleapis.com/plus/v1/comments/z121ujnwyoufxbmts23wh3arluyzunqcg#1526817547566750",
+      "published": "2018-05-20T11:59:07.566Z",
+      "updated": "2018-05-20T11:59:07.566Z",
+      "authorId": "106086227955576479596",
+      "authorDisplayName": "Patricio Portillo",
+      "content": "Fantastic! I want to know about this histories"
+    },
+    {
+      "id": "z121ujnwyoufxbmts23wh3arluyzunqcg.1526828671696884",
+      "url": "https://www.googleapis.com/plus/v1/comments/z121ujnwyoufxbmts23wh3arluyzunqcg#1526828671696884",
+      "published": "2018-05-20T15:04:31.696Z",
+      "updated": "2018-05-20T15:04:31.696Z",
+      "authorId": "104383606385424381727",
+      "authorDisplayName": "Bob Howard",
+      "content": "I still can't believe you managed to make all of these, you're amazing Blue!!"
+    },
+    {
+      "id": "z121ujnwyoufxbmts23wh3arluyzunqcg.1526829381666148",
+      "url": "https://www.googleapis.com/plus/v1/comments/z121ujnwyoufxbmts23wh3arluyzunqcg#1526829381666148",
+      "published": "2018-05-20T15:16:21.666Z",
+      "updated": "2018-05-20T15:16:21.666Z",
+      "authorId": "117808888540543096789",
+      "authorDisplayName": "Brandon Paul",
+      "content": "That's cool. I want to make my own mock covers now! ;D"
+    },
+    {
+      "id": "z121ujnwyoufxbmts23wh3arluyzunqcg.1526837329456465",
+      "url": "https://www.googleapis.com/plus/v1/comments/z121ujnwyoufxbmts23wh3arluyzunqcg#1526837329456465",
+      "published": "2018-05-20T17:28:49.456Z",
+      "updated": "2018-05-20T17:28:49.456Z",
+      "authorId": "110227855125561942595",
+      "authorDisplayName": "Wright Johnson",
+      "content": "These are amazing and I love them."
     }
   ],
-  "content": "Yesterday's Masks session saw the team sail off-world in a bone ship powered by uncomfortable truths, hoping to rescue an old-school supervillain (who could be a useful ally) from the clutches of the Rime Court. Plus, one of my players set a new bar for cosplay!<br /><br />Sonia (The Soldier) stayed on mission and also blasted off an ice-dragon's wing. Panic (The Doomed) sacrificed a tooth to a skeleton to get here, and accidentally stabbed Halfpenny (The Transformed) through the soul with a bone sword (he got better).<br /><br />Torq (The Nova) cleverly avoided drinking liquid nostalgia at a Rime Court soiree with a careful application of gravity control inside his esophagus. General Bowmaster (The Legacy) put on a show to create a distraction, but got so into the role his fae mask wouldn't come off.<br /><br />In the end, the team reached the room where Baron Devastation was enthroned/imprisoned, only to see masses of Rime Court Hunters pouring in as well. To be continued...next weekend!",
-  "id": "z134ilpgrx3ys3btn23rzz4ybuztyzwhg04",
-  "url": "https://plus.google.com/+AlexiSargeant/posts/9a7eTDTafH9",
+  "content": "Wanted to share the mock comic covers that I've been making for my campaign's first arc since i just finished the final cover for the first arc, 6 in total. <br />We have VECTOR the Beacon, A. Eye as the Janus, Blitz Soul as the Nova, False Halo as the Doomed, Prowler the Delinquent, and Adamantium as the Bull",
+  "id": "z121ujnwyoufxbmts23wh3arluyzunqcg",
+  "url": "https://plus.google.com/+Blue-cat-hat/posts/AU1DYiB88Qz",
   "attachmentsPlus": [
     {
-      "albumUrl": "https://plus.google.com/photos/106484838480275093774/albums/6656816116626649713?authkey=CO6M8uey3ZiIugE&sqi=110704683035976001273&sqsi=6c5e852a-c1c7-4b97-bbb7-e50f4f40c81e"
+      "albumUrl": "https://plus.google.com/photos/113672685246787093188/albums/6557480253327076929?authkey=CKDH3eTFia_RZw&sqi=110704683035976001273&sqsi=15fb5f2e-3104-405f-84b0-85c75ddb7d5a",
+      "albumPhotoUrls": [
+        "https://plus.google.com/photos/113672685246787093188/album/6557480253327076929/6557480260288790754?authkey=CKDH3eTFia_RZw",
+        "https://plus.google.com/photos/113672685246787093188/album/6557480253327076929/6557480258286036530?authkey=CKDH3eTFia_RZw",
+        "https://plus.google.com/photos/113672685246787093188/album/6557480253327076929/6557480259869461346?authkey=CKDH3eTFia_RZw",
+        "https://plus.google.com/photos/113672685246787093188/album/6557480253327076929/6557480258473163538?authkey=CKDH3eTFia_RZw",
+        "https://plus.google.com/photos/113672685246787093188/album/6557480253327076929/6557480260480806258?authkey=CKDH3eTFia_RZw",
+        "https://plus.google.com/photos/113672685246787093188/album/6557480253327076929/6557480257683900386?authkey=CKDH3eTFia_RZw"
+      ]
     }
   ]
-}
+}]

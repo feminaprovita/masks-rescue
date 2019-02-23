@@ -1,7 +1,6 @@
 const fs = require('fs')
 const {google} = require('googleapis')
-const c = require('./credentials')
-const allActivities = require('./ids_all')
+const c = require('../credentials')
 
 const p = google.plus({version: 'v1', auth: c})
 
@@ -44,15 +43,18 @@ const parseActivity = async (activityId) => {
   }
 }
 
-const getAllActivities = async () => {
+const getAllActivities = async (activityList) => {
   let out = []
-  for (let i = 0; i < allActivities.length; i++){
-    out.push(await parseActivity(allActivities[i]))
+  for (let i = 0; i < activityList.length; i++){
+    out.push(await parseActivity(activityList[i]))
   }
   return out
 }
 
-parseActivity(allActivities[0]).then(v => console.log(JSON.stringify(v, undefined, 2)))
+module.exports = (inputJ, outputJ) => {
+  const activityList = JSON.parse(fs.readFileSync(inputJ, 'utf8'))
+  parseActivity(activityList[0]).then(v => console.log(JSON.stringify(v, undefined, 2)))
 
-getAllActivities().then(
-  v => fs.writeFileSync('./act_comm.json', JSON.stringify(v, undefined, 2)));
+  getAllActivities(activityList).then(
+    v => fs.writeFileSync(outputJ, JSON.stringify(v, undefined, 2)));
+}
