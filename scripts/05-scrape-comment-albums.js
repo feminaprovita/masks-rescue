@@ -1,20 +1,12 @@
-const puppeteer = require('puppeteer');
+const { scrapePageByUrl } = require('./utils')
 
-const scrape = async (url) => {
-  const browser = await puppeteer.launch({headless: true});
-  const page = await browser.newPage();
-  await page.goto(url);
-  const result = await page.evaluate(() => {
-    if(document.querySelectorAll('.jBMwef').length) {
-      document.querySelectorAll('.jBMwef')[0].click()
-    }
-    const extractedElements = Array.from(document.querySelectorAll('.e8zLFb.GSnotf'));
-    return extractedElements.map(el => el.getAttribute('jsdata').split(';')[1]);
-  });
-  await browser.close();
-  // console.log('RESULT', result);
-  return result;
-};
+const extractAllCommentAttachments = () => {
+  if(document.querySelectorAll('.jBMwef').length) {
+    document.querySelectorAll('.jBMwef')[0].click()
+  }
+  const extractedElements = Array.from(document.querySelectorAll('.e8zLFb.GSnotf'));
+  return extractedElements.map(el => el.getAttribute('jsdata').split(';')[1]);
+}
 
 const batchCommentScraping = async (arr,num=10) => {
   for (let i = 0; i < arr.length; i += num) {
@@ -26,7 +18,7 @@ const batchCommentScraping = async (arr,num=10) => {
           return acc
         },[])
         if(garbageIndices.length) {
-          let urlArr = await scrape(e.url)
+          let urlArr = await scrapePageByUrl(e.url, extractAllCommentAttachments)
           if(garbageIndices.length !== urlArr.length) {
             console.log('HELP!!!!', e.url)
             e.garbageUrlFailure = true;
