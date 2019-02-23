@@ -1,6 +1,5 @@
 const fs = require('fs');
 const puppeteer = require('puppeteer');
-const masksUrl = require('./feeder');
 
 const extractIds = () => {
   let extractedElements = document.querySelectorAll('.aJZAlb.pYN4db.vCjazd')
@@ -26,20 +25,15 @@ const scrapeInfiniteScrollItems = async (page, extractItems, itemTargetCount, sc
   return Array.from(new Set(items));
 }
 
-(async () => {
+module.exports = (async (url, outputJ, maxItems=1000000) => {
   const browser = await puppeteer.launch({
     headless: false,
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });
   const page = await browser.newPage();
   page.setViewport({ width:1280, height: 926 });
-  await page.goto(masksUrl);
-  const items = await scrapeInfiniteScrollItems(page, extractIds,1000000);
-  fs.writeFileSync('../scraped_ids/ids_hlc.json', JSON.stringify(items, undefined, 2));
+  await page.goto(url);
+  const items = await scrapeInfiniteScrollItems(page, extractIds,maxItems);
+  fs.writeFileSync(outputJ, JSON.stringify(items, undefined, 2));
   await browser.close();
-})();
-
-
-
-
-
+});

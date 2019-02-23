@@ -1,6 +1,5 @@
 const fs = require('fs');
 const puppeteer = require('puppeteer');
-const photoAlbumUrlArr = require('../scraped/photo_urls.js');
 
 const scrape = async (url) => {
   const browser = await puppeteer.launch({headless: true});
@@ -23,13 +22,17 @@ const slowDownAlbumScraping = async (arr,num=10) => {
   for (let i = 0; i < arr.length; i += num) {
     let portionToScrape = arr.slice(i,i+num);
     await Promise.all(portionToScrape.map(async e => {
-      e.albumPhotoUrls = await scrape(e.albumUrl);
+      if (e.attachmentsPlus && e.attachmentsPlus[0].albumUrl){
+        e.albumPhotoUrls = await scrape(e.attachmentsPlus[0].albumUrl);
+      }
       return e;
     }));
   }
   return arr;
 }
 
-const output = slowDownAlbumScraping(photoAlbumUrlArr)
-
-fs.writeFileSync('./scraped/photo_urls.json', JSON.stringify(output, undefined, 2));
+module.exports = (inputJ, outputJ) => {
+  const posts = JSON.parse(fs.readFileSync(inputJ, 'utf8'))
+  const output = slowDownAlbumScraping(posts)
+  fs.writeFileSync(outputJ, JSON.stringify(output, undefined, 2));
+}
