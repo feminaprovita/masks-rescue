@@ -57,8 +57,4 @@ module.exports = async (inputJ, outputJ, outputDir) => {
     let portionToScrape = posts.slice(i,i+num);
     await Promise.all(portionToScrape.map(scrape));
   }
-
-  // getRealPhotoUrls(JSON.parse(fs.readFileSync(inputJ,'utf8'))).then(output => {
-  //   fs.writeFileSync(outputJ, JSON.stringify(output, undefined, 2));
-  // })
 }
