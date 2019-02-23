@@ -4,13 +4,6 @@ const sortPostsByDate = (a,b) => {
   return d1.getTime() === d2.getTime() ? 0 : (d1.getTime() > d2.getTime() ? -1 : 1)
 }
 
-const unescapeApostrophes = (str) => {
-  return str.replace(/&#39;/gm, "'")
-}
-
-
-
 module.exports = {
-  sortPostsByDate,
-  unescapeApostrophes
+  sortPostsByDate
 }
