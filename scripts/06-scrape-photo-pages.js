@@ -1,4 +1,3 @@
-const fs = require('fs');
 const puppeteer = require('puppeteer');
 
 const scrape = async (url) => {
@@ -52,8 +51,4 @@ const getRealPhotoUrls = async objArr => {
   return output;
 }
 
-module.exports = (inputJ, outputJ) => {
-  getRealPhotoUrls(JSON.parse(fs.readFileSync(inputJ,'utf8'))).then(output => {
-    fs.writeFileSync(outputJ, JSON.stringify(output, undefined, 2));
-  })
-}
+module.exports = getRealPhotoUrls
