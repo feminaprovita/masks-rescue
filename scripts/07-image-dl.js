@@ -1,4 +1,3 @@
-const fs = require('fs')
 const https = require('https')
 
 // let u = 'https://lh3.googleusercontent.com/-D3B_DAZMsIg/XCHg1khea_I/AAAAAAAAAbE/7WEuZeexNnwDR-Lzfilename94F9416RzwZJ7owCJoC/w523-h832/001'
@@ -27,7 +26,7 @@ const getImage = (url, filename = 't') => {
   })
 }
 
-module.exports = async (inputJ, outputJ, outputDir) => {
+module.exports = async (posts, outputDir) => {
   const scrape = async (post, pIdx) => {
     if(pIdx === -1) return;
     console.log(pIdx)
@@ -50,7 +49,6 @@ module.exports = async (inputJ, outputJ, outputDir) => {
       }))
     }
   }
-  let posts = JSON.parse(fs.readFileSync(inputJ,'utf8'))
   let num = 50
   for (let i = 0; i < posts.length; i += num) {
     console.log('post index:', i)
