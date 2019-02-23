@@ -25,7 +25,7 @@ const scrapeInfiniteScrollItems = async (page, extractItems, itemTargetCount, sc
   return Array.from(new Set(items));
 }
 
-module.exports = (async (url, outputJ, maxItems=1000000) => {
+module.exports = (async (url, maxItems=1000000) => {
   const browser = await puppeteer.launch({
     headless: false,
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
@@ -34,6 +34,6 @@ module.exports = (async (url, outputJ, maxItems=1000000) => {
   page.setViewport({ width:1280, height: 926 });
   await page.goto(url);
   const items = await scrapeInfiniteScrollItems(page, extractIds,maxItems);
-  fs.writeFileSync(outputJ, JSON.stringify(items, undefined, 2));
   await browser.close();
+  return items;
 });
