@@ -1,25 +1,16 @@
-const puppeteer = require('puppeteer');
+const { scrapePageByUrl } = require('./utils')
+{timeout:55000}
 
-const scrape = async (url) => {
-  const browser = await puppeteer.launch({headless: true, timeout: 60000});
-  const page = await browser.newPage();
-  await page.goto(url, {timeout:55000});
-  const result = await page.evaluate(() => {
-    let photoDownloadNode = document.querySelectorAll('.nKtIqb.GOVOFb')[0]
-    // document.querySelectorAll('.nKtIqb.GOVOFb')[0].children[1].src
-    // let photoDownloadLink = document.querySelectorAll('.O84Olb')[0].getAttribute('data-iu')
-    return photoDownloadNode.dataset.dlu || photoDownloadNode.children[1].src;
-  });
-  await browser.close();
-  // console.log('RESULT', result)
-  return result;
-};
+const extractDirectLinkFromPhotoPage = () => {
+  let photoDownloadNode = document.querySelectorAll('.nKtIqb.GOVOFb')[0]
+  return photoDownloadNode.dataset.dlu || photoDownloadNode.children[1].src;
+}
 
 const batchScrape = async(arr,num=4) => {
   let output = [];
   for (let i = 0; i < arr.length; i += num) {
     let portionToScrape = arr.slice(i,i+num);
-    output = output.concat(await Promise.all(portionToScrape.map(scrape)).catch(e => ['plusError: ' + e.message]));
+    output = output.concat(await Promise.all(portionToScrape.map(u => scrapePageByUrl(u, extractDirectLinkFromPhotoPage, {timeout:55000}))).catch(e => ['plusError: ' + e.message]));
   }
   return output;
 }
