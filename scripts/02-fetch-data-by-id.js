@@ -1,4 +1,3 @@
-const fs = require('fs')
 const {google} = require('googleapis')
 const c = require('../credentials')
 
@@ -22,9 +21,17 @@ const parseComments = async (activityId) => {
 }
 
 const parseActivity = async (activityId) => {
-
-  let activityData = (await p.activities.get({activityId})).data
+  let retriesRemaining = 10
+  let activityData
+  while (retriesRemaining) {
+    activityData = (await p.activities.get({activityId})).data
+    if(activityData.object) break
+    retriesRemaining -= 1
+  }
   let comments = []
+  if(!activityData.object) {
+    console.log('******************', activityId)
+  }
   if (activityData.object.replies.totalItems > 0)
     comments = await parseComments(activityId)
 
@@ -47,7 +54,7 @@ const getAllActivities = async (activityList) => {
   let out = []
   for (let i = 0; i < activityList.length; i++){
     let parsed = await parseActivity(activityList[i])
-    if (i === 0) console.log(JSON.stringify(parsed, undefined, 2)
+    // if (i === 0) console.log(JSON.stringify(parsed, undefined, 2))
     out.push(parsed)
   }
   return out

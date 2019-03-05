@@ -8,11 +8,11 @@ const sortPostsByDate = (a,b) => {
 }
 
 const readJsonFile = (filename) => {
-  return JSON.parse(fs.readFileSync(filename, 'utf8')) 
+  return JSON.parse(fs.readFileSync(filename, 'utf8'))
 }
 
-const writeJsonFile = (filename, objectToWrite) => {
-  fs.writeFileSync(filename, JSON.stringify(objectToWrite, undefined, 2))
+const writeJsonFile = async (filename, promiseToWrite) => {
+  fs.writeFileSync(filename, JSON.stringify(await promiseToWrite, undefined, 2))
 }
 
 const scrapeInfiniteScrollItems = async (page, extractItems, itemTargetCount, scrollDelay = 1000) => {
@@ -26,6 +26,7 @@ const scrapeInfiniteScrollItems = async (page, extractItems, itemTargetCount, sc
       await page.waitForFunction(`document.body.scrollHeight > ${previousHeight}`);
       await page.waitFor(scrollDelay);
     }
+    // console.log(items[0])
   } catch(e) { console.log(e) }
   return Array.from(new Set(items));
 }
@@ -43,8 +44,7 @@ const ScrapeInfiniteScrollByUrl = async (url, extractItems, maxItems=1000000) =>
   return items;
 }
 
-const scrapePageByUrl = async (url, extractorFx, gotoOptions) => {
-  gotoOptions = gotoOptions || {}
+const scrapePageByUrl = async (url, extractorFx, gotoOptions = {}) => {
   const browser = await puppeteer.launch({headless: true});
   const page = await browser.newPage();
   await page.goto(url, gotoOptions);

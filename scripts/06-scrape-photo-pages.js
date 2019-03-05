@@ -1,5 +1,4 @@
 const { scrapePageByUrl } = require('./utils')
-{timeout:55000}
 
 const extractDirectLinkFromPhotoPage = () => {
   let photoDownloadNode = document.querySelectorAll('.nKtIqb.GOVOFb')[0]

@@ -30,7 +30,8 @@ const parseAndCleanup = cleaned => {
         } else {
           let link = c.content.replace(/.*?<i><a href=\"https:\/\/plus.google.com\/legacy_photo_redirect\"\s*?>(.*?)<\/a><\/i>.*?/, '$1')
           c.content = c.content.replace(r, '[attachment]')
-          c.commentAttachment = {photoUrl: link}
+          // c.commentAttachment = {photoUrl: link}
+          c.commentAttachment = {garbageUrl: true}
         }
       }
     })

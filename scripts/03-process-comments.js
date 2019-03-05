@@ -19,7 +19,7 @@ module.exports = (posts) => {
             break;
           case 'video':
             if (a.url.startsWith('https://plus.google.com'))
-              i.attachmentsPlus.push({videoUrl: a.url})
+              i.attachmentsPlus.push({photoUrl: a.url})
             else i.attachmentsParsed.push({url: a.url})
             break;
           case 'album':
