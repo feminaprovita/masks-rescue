@@ -10,6 +10,19 @@ module.exports = {
   bluebeard_announcements: 'https://plus.google.com/communities/112865691443527494870/stream/3d3cb6c9-b8ef-4cb3-8992-2031d5e62765',
   bluebeard_actual_play: 'https://plus.google.com/communities/112865691443527494870/stream/c80ddac0-dace-422f-8b52-8c2ee42c0f14',
   bluebeard_discussion: 'https://plus.google.com/communities/112865691443527494870/stream/fa7eb449-6e24-4070-81b6-431d317a5ad1',
-  bluebeard_fan_made_content: 'https://plus.google.com/communities/112865691443527494870/stream/4c56dad2-fcd7-49be-add5-9f331b513377'
+  bluebeard_fan_made_content: 'https://plus.google.com/communities/112865691443527494870/stream/4c56dad2-fcd7-49be-add5-9f331b513377',
+  epyllion_all: 'https://plus.google.com/communities/106294407745457601541',
+  epyllion_discussion: 'https://plus.google.com/communities/106294407745457601541/stream/ed4dc1a3-44ff-4b3a-8357-c831e3cb1b67',
+  epyllion_actual_play: 'https://plus.google.com/communities/106294407745457601541/stream/0f8c5c6b-3f05-4fbc-b782-f8c6ec836410',
+  epyllion_fan_made_content: 'https://plus.google.com/communities/106294407745457601541/stream/18585827-42af-4a75-8ae1-1c263760fac0',
+  urban_shadows_all: 'https://plus.google.com/communities/101690788864141664454',
+  urban_shadows_announcements: 'https://plus.google.com/communities/101690788864141664454/stream/be109770-3397-45f0-bc49-037986951ffc',
+  urban_shadows_discussion: 'https://plus.google.com/communities/101690788864141664454/stream/8970e230-648d-4a5a-9343-cba78fcb849c',
+  urban_shadows_fan_made_content: 'https://plus.google.com/communities/101690788864141664454/stream/36178933-8eed-4f27-bb6b-df141075c895',
+  urban_shadows_archetypes: 'https://plus.google.com/communities/101690788864141664454/stream/81c4f1c0-0a96-4f75-a8fc-fe1b0d9324e9',
+  urban_shadows_rules_update: 'https://plus.google.com/communities/101690788864141664454/stream/fb9297f6-52f4-46e8-8c9d-a3bd8aa6fd6f',
+  urban_shadows_for_fun: 'https://plus.google.com/communities/101690788864141664454/stream/b33ff63a-23ed-45a2-a118-dc8bdf55796a',
+  urban_shadows_kickstarter_feedback: 'https://plus.google.com/communities/101690788864141664454/stream/8e0733bf-08ad-466d-a602-f58db9562d17',
+  urban_shadows_inspirations: 'https://plus.google.com/communities/101690788864141664454/stream/9046bd99-ee6c-41b4-a9c6-a8e5be4ace48',
+  urban_shadows_looking_for_game: 'https://plus.google.com/communities/101690788864141664454/stream/99792440-a1c3-4251-a32f-d07e8c036880'
 }
-// need to pull in all epyllion and urban shadows still

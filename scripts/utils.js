@@ -26,7 +26,6 @@ const scrapeInfiniteScrollItems = async (page, extractItems, itemTargetCount, sc
       await page.waitForFunction(`document.body.scrollHeight > ${previousHeight}`);
       await page.waitFor(scrollDelay);
     }
-    // console.log(items[0])
   } catch(e) { console.log(e) }
   return Array.from(new Set(items));
 }
