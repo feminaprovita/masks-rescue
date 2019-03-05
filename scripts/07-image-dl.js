@@ -16,7 +16,6 @@ const getImage = (url, filename = 't') => {
       if (!ext) ext = mime || ''
       ext = ext.replace('image/', '')
       ext = ext.replace('/', '_')
-      // console.log(ext)
       let file = fs.createWriteStream(`${filename}.${ext}`)
       res.pipe(file)
       file.on('finish', () => {

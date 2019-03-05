@@ -1,4 +1,4 @@
-const {ScrapeInfiniteScrollByUrl} = require('./utils')
+const {scrapeInfiniteScrollByUrl} = require('./utils')
 
 const extractIds = () => {
   let extractedElements = document.querySelectorAll('.aJZAlb.pYN4db.vCjazd')
@@ -10,5 +10,5 @@ const extractIds = () => {
 }
 
 module.exports = async (url, maxItems=1000000) => {
-  return await ScrapeInfiniteScrollByUrl(url, extractIds, maxItems)
+  return await scrapeInfiniteScrollByUrl(url, extractIds, maxItems)
 }

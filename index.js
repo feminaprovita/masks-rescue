@@ -9,7 +9,12 @@ const scrapeCommentAlbums = require('./scripts/05-scrape-comment-albums')
 const scrapePhotoPages = require('./scripts/06-scrape-photo-pages')
 const imageDl = require('./scripts/07-image-dl.js')
 
-const bluebeardIds = './bluebeard_all_ids_20190304.json'
+// const masksIds = './'
+const bluebeardIds = require('./outputs/bluebeard_all_ids_20190304.json')
+const epyllionIds = require('./outputs/epyllion_all_ids_20190305.json')
+const urbanShadowsIds = require('./outputs/urban_shadows_all_ids_20190305.json')
+const velvetGloveIds = require('./outputs/velvet_glove_all_ids_20190305.json')
+
 
 const updateIds = (sourceUrl, oldPosts, outputIdFilename) => {
   scrapeIds(sourceUrl,100).then(x => {
@@ -39,9 +44,12 @@ const idsToPostsAndImages = (ids, outputFile, imageDir) => {
   .then(x => imageDl(x,imageDir))
 }
 
-// fetchAllIds(url.bluebeard_all, './outputs/bluebeard_all_ids_20190304-b.json')
+// fetchAllIds(url.masks_all, './outputs/masks_all_ids_20190305.json')
 
-idsToPostsAndImages(bluebeardIds, './outputs/bluebeard_all_fullposts_20190304.json', './img/bluebeard_20190304')
+// idsToPostsAndImages(epyllionIds, './outputs/epyllion_all_fullposts_20190305.json', './img/epyllion_20190305')
+idsToPostsAndImages(urbanShadowsIds, './outputs/urban_shadows_all_fullposts_20190305.json', './img/urban_shadows_20190305')
+// idsToPostsAndImages(velvetGloveIds, './outputs/velvet_glove_all_fullposts_20190305.json', './img/velvet_glove_20190305')
+
 
 
 

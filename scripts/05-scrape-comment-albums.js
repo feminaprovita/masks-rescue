@@ -20,11 +20,9 @@ const batchCommentScraping = async (arr,num=10) => {
         if(garbageIndices.length) {
           let urlArr = await scrapePageByUrl(e.url, extractAllCommentAttachments)
           if(garbageIndices.length !== urlArr.length) {
-            console.log('HELP!!!!', e.url, `\ngarbageIndices.length: ${garbageIndices.length}, urlArr.length: ${urlArr.length}, \n`, urlArr)
-            console.log(e.comments)
+            console.log('HELP!!!!', e.url)
             e.garbageUrlFailure = true;
           } else {
-            // console.log(urlArr.length, urlArr)
             garbageIndices.forEach((j, idx) => {
             e.comments[j].commentAttachment = { albumPhotoUrls: [urlArr[idx]] }
 

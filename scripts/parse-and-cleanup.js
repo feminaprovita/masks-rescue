@@ -4,13 +4,13 @@ const unescapeApostrophes = (str) => {
 
 const parseAndCleanup = cleaned => {
 
-  console.log(new Set(cleaned.match(/<.*?[\s,>]/g)))
+  // console.log(new Set(cleaned.match(/<.*?[\s,>]/g)))
 
   cleaned = cleaned.replace(/data-.*?\\\".*?\\\"/g, '')
   cleaned = cleaned.replace(/class=\\\"ot-anchor\\\"/g, '')
   cleaned = cleaned.replace(/<span class=\\"proflinkWrapper\\">(.*?>){3}(.*?)<\/a><\/span>/g, '+$2')
 
-  console.log(new Set(cleaned.match(/<.*?[\s,>]/g)))
+  // console.log(new Set(cleaned.match(/<.*?[\s,>]/g)))
 
   cleaned = cleaned.replace(/\s+/g,' ')
   cleaned = unescapeApostrophes(cleaned)
@@ -38,7 +38,7 @@ const parseAndCleanup = cleaned => {
     if (garbageCount) console.log('gc', garbageCount)
   })
 
-  console.log(cleanedObj.length)
+  // console.log(cleanedObj.length)
 
   return cleanedObj
 }

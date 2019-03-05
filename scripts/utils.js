@@ -16,41 +16,40 @@ const writeJsonFile = async (filename, promiseToWrite) => {
 }
 
 const scrapeInfiniteScrollItems = async (page, extractItems, itemTargetCount, scrollDelay = 1000) => {
-  let items = [];
+  let items = []
   try {
-    let previousHeight;
+    let previousHeight
     while(items.length < itemTargetCount) {
       items = items.concat(await page.evaluate(extractItems));
-      previousHeight = await page.evaluate('document.body.scrollHeight');
-      await page.evaluate('window.scrollTo(0,document.body.scrollHeight)');
-      await page.waitForFunction(`document.body.scrollHeight > ${previousHeight}`);
-      await page.waitFor(scrollDelay);
+      previousHeight = await page.evaluate('document.body.scrollHeight')
+      await page.evaluate('window.scrollTo(0,document.body.scrollHeight)')
+      await page.waitForFunction(`document.body.scrollHeight > ${previousHeight}`)
+      await page.waitFor(scrollDelay)
     }
   } catch(e) { console.log(e) }
-  return Array.from(new Set(items));
+  return Array.from(new Set(items))
 }
 
-const ScrapeInfiniteScrollByUrl = async (url, extractItems, maxItems=1000000) => {
+const scrapeInfiniteScrollByUrl = async (url, extractItems, maxItems=1000000) => {
   const browser = await puppeteer.launch({
-    headless: false,
+    headless: true,
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
-  });
-  const page = await browser.newPage();
-  page.setViewport({ width:1280, height: 926 });
-  await page.goto(url);
-  const items = await scrapeInfiniteScrollItems(page, extractItems, maxItems);
-  await browser.close();
-  return items;
+  })
+  const page = await browser.newPage()
+  page.setViewport({ width: 1280, height: 926 })
+  await page.goto(url)
+  const items = await scrapeInfiniteScrollItems(page, extractItems, maxItems)
+  await browser.close()
+  return items
 }
 
 const scrapePageByUrl = async (url, extractorFx, gotoOptions = {}) => {
-  const browser = await puppeteer.launch({headless: true});
-  const page = await browser.newPage();
-  await page.goto(url, gotoOptions);
-  const result = await page.evaluate(extractorFx);
-  await browser.close();
-//   console.log('RESULT', result);
-  return result;
+  const browser = await puppeteer.launch({headless: true})
+  const page = await browser.newPage()
+  await page.goto(url, gotoOptions)
+  const result = await page.evaluate(extractorFx)
+  await browser.close()
+  return result
 };
 
 
@@ -58,6 +57,6 @@ module.exports = {
   sortPostsByDate,
   readJsonFile,
   writeJsonFile,
-  ScrapeInfiniteScrollByUrl, //cap was an accident please fix in vscode
+  scrapeInfiniteScrollByUrl,
   scrapePageByUrl
 }

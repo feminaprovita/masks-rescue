@@ -24,5 +24,10 @@ module.exports = {
   urban_shadows_for_fun: 'https://plus.google.com/communities/101690788864141664454/stream/b33ff63a-23ed-45a2-a118-dc8bdf55796a',
   urban_shadows_kickstarter_feedback: 'https://plus.google.com/communities/101690788864141664454/stream/8e0733bf-08ad-466d-a602-f58db9562d17',
   urban_shadows_inspirations: 'https://plus.google.com/communities/101690788864141664454/stream/9046bd99-ee6c-41b4-a9c6-a8e5be4ace48',
-  urban_shadows_looking_for_game: 'https://plus.google.com/communities/101690788864141664454/stream/99792440-a1c3-4251-a32f-d07e8c036880'
+  urban_shadows_looking_for_game: 'https://plus.google.com/communities/101690788864141664454/stream/99792440-a1c3-4251-a32f-d07e8c036880',
+  velvet_glove_all: 'https://plus.google.com/communities/116000853422066929679',
+  velvet_glove_discussion: 'https://plus.google.com/communities/116000853422066929679/stream/ea909f15-2143-41de-9e5c-5da6fee728e6',
+  velvet_glove_actual_play: 'https://plus.google.com/communities/116000853422066929679/stream/af9985db-aa66-4ddf-96b1-6efa5ada7562',
+  velvet_glove_announcements: 'https://plus.google.com/communities/116000853422066929679/stream/9d1496bc-4407-40dc-a4f0-84c9bcdfa3ad',
+  velvet_glove_fan_made_content: 'https://plus.google.com/communities/116000853422066929679/stream/09712246-307a-49f6-9dd3-016337cb31fa'
 }
