@@ -27,7 +27,7 @@ const getImage = (url, filename = 't') => {
   })
 }
 
-module.exports = async (inputJ, outputJ, outputDir) => {
+module.exports = async (posts, outputDir) => {
   const scrape = async (post, pIdx) => {
     if(pIdx === -1) return;
     console.log(pIdx)
@@ -50,15 +50,10 @@ module.exports = async (inputJ, outputJ, outputDir) => {
       }))
     }
   }
-  let posts = JSON.parse(fs.readFileSync(inputJ,'utf8'))
   let num = 50
   for (let i = 0; i < posts.length; i += num) {
     console.log('post index:', i)
     let portionToScrape = posts.slice(i,i+num);
     await Promise.all(portionToScrape.map(scrape));
   }
-
-  // getRealPhotoUrls(JSON.parse(fs.readFileSync(inputJ,'utf8'))).then(output => {
-  //   fs.writeFileSync(outputJ, JSON.stringify(output, undefined, 2));
-  // })
 }

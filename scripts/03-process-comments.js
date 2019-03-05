@@ -1,9 +1,6 @@
-const fs = require('fs')
 const parseAndCleanup = require('./parse-and-cleanup')
 
-module.exports = (inputJ, outputJ) => {
-  let posts = JSON.parse(fs.readFileSync(inputJ, 'utf8'))
-
+module.exports = (posts) => {
   posts.forEach(i => {
     if (i.attachments) {
       i.attachmentsParsed = []
@@ -22,7 +19,7 @@ module.exports = (inputJ, outputJ) => {
             break;
           case 'video':
             if (a.url.startsWith('https://plus.google.com'))
-              i.attachmentsPlus.push({videoUrl: a.url})
+              i.attachmentsPlus.push({photoUrl: a.url})
             else i.attachmentsParsed.push({url: a.url})
             break;
           case 'album':
@@ -47,6 +44,5 @@ module.exports = (inputJ, outputJ) => {
 // photo: fullImage.url (download)
 // video: url (download if it's google plus -- only one of these?!)
 // event: displayname, content
-  posts = parseAndCleanup(JSON.stringify(posts, undefined, 2))
-  fs.writeFileSync(outputJ, JSON.stringify(posts, undefined, 2));
+  return parseAndCleanup(JSON.stringify(posts, undefined, 2))
 }
