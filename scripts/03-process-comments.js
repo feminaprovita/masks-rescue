@@ -20,6 +20,7 @@ module.exports = (posts) => {
           case 'video':
             if (a.url.startsWith('https://plus.google.com'))
               i.attachmentsPlus.push({photoUrl: a.url})
+              // nb this may save an invalid filetype, in the end, so double-check
             else i.attachmentsParsed.push({url: a.url})
             break;
           case 'album':

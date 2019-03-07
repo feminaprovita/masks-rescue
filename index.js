@@ -9,7 +9,7 @@ const scrapeCommentAlbums = require('./scripts/05-scrape-comment-albums')
 const scrapePhotoPages = require('./scripts/06-scrape-photo-pages')
 const imageDl = require('./scripts/07-image-dl.js')
 
-// const masksIds = './'
+const masksIds = require('./outputs/masks_all_ids_20190306.json')
 const bluebeardIds = require('./outputs/bluebeard_all_ids_20190304.json')
 const epyllionIds = require('./outputs/epyllion_all_ids_20190305.json')
 const urbanShadowsIds = require('./outputs/urban_shadows_all_ids_20190305.json')
@@ -44,24 +44,6 @@ const idsToPostsAndImages = (ids, outputFile, imageDir) => {
   .then(x => imageDl(x,imageDir))
 }
 
-// fetchAllIds(url.masks_all, './outputs/masks_all_ids_20190305.json')
+// fetchAllIds(url.masks_halcyonians, './scratch/masks_halcyonians_ids_20190306.json')
 
-// idsToPostsAndImages(epyllionIds, './outputs/epyllion_all_fullposts_20190305.json', './img/epyllion_20190305')
-idsToPostsAndImages(urbanShadowsIds, './outputs/urban_shadows_all_fullposts_20190305.json', './img/urban_shadows_20190305')
-// idsToPostsAndImages(velvetGloveIds, './outputs/velvet_glove_all_fullposts_20190305.json', './img/velvet_glove_20190305')
-
-
-
-
-// writeJsonFile('update/masks_all_ids.json',readJsonFile('outputs/5_comments_linkified.json').map(x => x.id))
-
-// scrapeIds('https://plus.google.com/communities/110704683035976001273/stream/f2d8ee4d-e2f1-48ae-bc35-eb35ef63676a','ids_hlc.json')
-
-// fetchDataById('./res/1.json', './res/2.json')
-// processComments('./outputs/2_act_comm.json', './res/3.json')
-// scrapeAlbums('./res/3.json', './res/4.json')
-// scrapeCommentAlbums('./res/4.json', './res/5.json')
-// scrapePhotoPages('./outputs/5_comments_linkified.json', './res/6.json')
-// scrapePhotoPages('./scratch/test.json', './scratch/test-output.json')
-// imageDl('./outputs/6_photo_urls_direct.json', './scratch/idc-7.json', './img')
-
+idsToPostsAndImages(masksIds, './outputs/masks_all_fullposts_20190306.json', './img/masks_20190306')
